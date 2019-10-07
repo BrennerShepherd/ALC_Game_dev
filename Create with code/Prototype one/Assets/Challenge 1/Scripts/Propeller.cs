@@ -16,6 +16,7 @@ public class Propeller : MonoBehaviour
     void Update()
     {
         transform.Rotate(0, 0, 20);
+        
 
     }
 }
