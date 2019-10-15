@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5436836325928518321}
   - component: {fileID: 5436836326779110970}
   - component: {fileID: 8902382651726868642}
+  - component: {fileID: 4103942334153199715}
+  - component: {fileID: 2868957204242035036}
   m_Layer: 0
   m_Name: Food_EnergyCan_01
   m_TagString: Untagged
@@ -107,3 +109,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topBounds: 30
   lowerBound: -10
+--- !u!54 &4103942334153199715
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5436836325926526065}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2868957204242035036
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5436836325926526065}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.19234496, y: 0.4928414, z: 0.19001499}
+  m_Center: {x: 0, y: 0, z: 0}
