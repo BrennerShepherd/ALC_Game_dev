@@ -262,7 +262,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 40
+  field of view: 39.7
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -288,8 +288,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.33, y: 5.41, z: -27.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.54, y: 5.41, z: -34.18}
+  m_LocalScale: {x: -2.6151865, y: 1.0524, z: 1.0524}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -427,11 +427,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -9.23
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400046, guid: f8abbdd178867d2419ba9feb6ff2cba0, type: 3}
       propertyPath: m_LocalPosition.z
@@ -493,8 +493,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c5fe1ab855c4eb9bf983c04ba6d233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
-  gravityModifer: 2
+  jumpForce: 5
+  gravityModifer: 0.5
   gameover: 0
   isOnGround: 1
 --- !u!65 &1338354750
@@ -508,8 +508,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9779924, y: 3.529179, z: 1}
-  m_Center: {x: 0.011003926, y: 1.2645895, z: 0}
+  m_Size: {x: 0.9779924, y: 2.7036772, z: 0.3747538}
+  m_Center: {x: 0.0110039115, y: 1.3393531, z: 0.012633465}
 --- !u!54 &1338354751
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -518,9 +518,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1338354748}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1.2
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -556,8 +556,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 10, y: 2.220446e-16, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10, y: 7.9718704, z: 10}
+  m_Center: {x: 0, y: -3.9845734, z: 0}
 --- !u!23 &2014335013
 MeshRenderer:
   m_ObjectHideFlags: 0
