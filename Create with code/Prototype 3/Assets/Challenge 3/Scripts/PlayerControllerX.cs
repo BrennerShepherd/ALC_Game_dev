@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerControllerX : MonoBehaviour
 {
     public bool gameOver;
+    public bool islowenough = true;
 
     public float floatForce;
     private float gravityModifier = 1.5f;
@@ -16,6 +17,7 @@ public class PlayerControllerX : MonoBehaviour
     private AudioSource playerAudio;
     public AudioClip moneySound;
     public AudioClip explodeSound;
+    public AudioClip groundcollision;
 
 
     // Start is called before the first frame update
@@ -34,12 +36,20 @@ public class PlayerControllerX : MonoBehaviour
     void Update()
     {
         // While space is pressed and player is low enough, float up
-        if (Input.GetKey(KeyCode.Space) && !gameOver)
+        if (Input.GetKey(KeyCode.Space) && !gameOver && !islowenough)
         {
             playerRb.AddForce(Vector3.up * floatForce);
+
+        }
+        if (transform.position.y > 13)
+        {
+            islowenough = true;
+        }
+        else
+        {
+            islowenough = false;
         }
     }
-
     private void OnCollisionEnter(Collision other)
     {
         // if player collides with bomb, explode and set gameOver to true
@@ -59,6 +69,11 @@ public class PlayerControllerX : MonoBehaviour
             playerAudio.PlayOneShot(moneySound, 1.0f);
             Destroy(other.gameObject);
 
+        }
+        else if (other.gameObject.CompareTag("Ground")&& !gameOver)
+        {
+            playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+            playerAudio.PlayOneShot(groundcollision, 1.0f);
         }
 
     }
