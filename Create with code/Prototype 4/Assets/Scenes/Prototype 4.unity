@@ -492,7 +492,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311832161}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: fa5793f0fb1b74516ba86b5e3cf482f7, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -692,6 +692,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1279775659673140156, guid: 6dffccac0f4f54f03b64357dce035fb1,
+    type: 3}
+  enemyCount: 0
+  waveNumber: 1
+  powerupPrefab: {fileID: 1037720023605894110, guid: 708cb0d0c0c1e4ef88c5b3b9ad2ca567,
     type: 3}
 --- !u!4 &1432443666
 Transform:
