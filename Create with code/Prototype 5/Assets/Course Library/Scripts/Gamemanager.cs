@@ -9,6 +9,8 @@ public class Gamemanager : MonoBehaviour
     private float spawnRate = 1.0f;
     private int score;
     public TextMeshProUGUI scoreText;
+    public TextMeshProUGUI gameOverText;
+    public bool isGameActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,18 @@ public class Gamemanager : MonoBehaviour
             scoreText.text = "Score: " + score;
         }
         UpdateScore(0);
+        isGameActive = true;
+        
 
+    }
+    public void GameOver()
+    {
+     gameOverText.gameObject.SetActive(true);
+        isGameActive = false;
     }
     IEnumerator SpawnTarget()
     {
-        while (true)
+        while (isGameActive)
         {
             yield return new WaitForSeconds(spawnRate);
             int index = Random.Range(0, targets.Count);

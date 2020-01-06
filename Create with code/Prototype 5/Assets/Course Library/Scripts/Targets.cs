@@ -11,6 +11,7 @@ public class Targets : MonoBehaviour
     private Gamemanager gameManager;
     public int pointValue;
     public ParticleSystem explosionParticle;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +24,7 @@ public class Targets : MonoBehaviour
         {
             gameManager = GameObject.Find("Gamemanager").GetComponent<Gamemanager>();
         }
+     
     }
 
     Vector3 RandomForce() { return Vector3.up * Random.Range(minSpeed, maxSpeed); }
@@ -37,15 +39,24 @@ public class Targets : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Destroy(gameObject);
-        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-        if (gameManager != null)
+        if (gameManager.isGameActive)
         {
-            gameManager.UpdateScore(pointValue);
+            Destroy(gameObject);
+            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+            if (gameManager != null)
+            {
+                gameManager.UpdateScore(pointValue);
+            }
         }
     }
+    
+
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
+        if (!gameObject.CompareTag("Bad"))
+        {
+            gameManager.GameOver();
+        }
     }
 }
