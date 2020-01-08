@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Targets : MonoBehaviour
 {
@@ -39,17 +40,19 @@ public class Targets : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (gameManager.isGameActive)
+        if (!gameManager.isGameActive)
         {
-            Destroy(gameObject);
-            Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
-            if (gameManager != null)
-            {
-                gameManager.UpdateScore(pointValue);
-            }
+            return;
+        }
+
+        Destroy(gameObject);
+        Instantiate(explosionParticle, transform.position, explosionParticle.transform.rotation);
+        if (gameManager != null)
+        {
+            gameManager.UpdateScore(pointValue);
         }
     }
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
